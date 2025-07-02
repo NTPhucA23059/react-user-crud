@@ -1,38 +1,189 @@
+/* Căn chỉnh tổng thể cho toàn bộ ứng dụng */
+#root {
+  max-width: 1280px;
+  /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto;
+  /* Căn giữa theo chiều ngang */
+  padding: 2rem;
+  /* Thêm khoảng trống xung quanh */
+  text-align: center;
+  /* Căn giữa nội dung bên trong */
+}
+
+/* Cấu hình logo */
+.logo {
+  height: 6em;
+  /* Chiều cao logo */
+  padding: 1.5em;
+  /* Khoảng cách xung quanh logo */
+  will-change: filter;
+  /* Tối ưu hiệu ứng filter khi hover */
+  transition: filter 300ms;
+  /* Hiệu ứng mượt khi hover filter */
+}
+
+/* Hiệu ứng bóng mờ khi hover logo */
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+/* Hiệu ứng riêng khi hover logo có class react */
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Animation quay tròn cho logo */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+    /* Bắt đầu từ góc 0 */
+  }
+
+  to {
+    transform: rotate(360deg);
+    /* Quay 360 độ */
+  }
+}
+
+/* Kích hoạt quay logo nếu không bị hạn chế chuyển động */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+    /* Quay vô hạn trong 20s */
+  }
+}
+
+/* Style đơn giản cho thẻ card */
+.card {
+  padding: 2em;
+  /* Khoảng cách bên trong */
+}
+
+/* Style cho phần mô tả "read the docs" */
+.read-the-docs {
+  color: #888;
+  /* Màu xám nhẹ */
+}
+
+/* Căn trái nội dung App và căn giữa theo chiều ngang */
 .App {
+  text-align: left;
+  margin: 0 auto;
+  /* max-width: 400px;  ← comment lại vì không giới hạn */
+}
+
+/* Danh sách điều hướng (navigation list) */
+.nav-list {
+  display: flex;
+  /* Hiển thị theo hàng ngang */
+  gap: 16px;
+  /* Khoảng cách giữa các phần tử */
+  margin: 16px;
+  /* Khoảng cách ngoài toàn khối */
+}
+
+/* Căn giữa phần trang chủ */
+.home-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Kiểu chữ cho tên người dùng */
+.user-name {
+  font-family: Roboto;
+  /* Font chữ */
+  font-weight: normal;
+  /* Độ đậm thường */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Avatar người dùng */
+.user-profile-pic {
+  height: 250px;
+  /* Chiều cao ảnh */
+  aspect-ratio: 1 / 1;
+  /* Tỷ lệ 1:1 (vuông) */
+  border-radius: 50%;
+  /* Bo tròn thành hình tròn */
+  object-fit: cover;
+  /* Ảnh vừa khít khung, không méo */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Tên người dùng in đậm, nghiêng và màu cam */
+.user-first-name {
+  font-weight: bold;
+  font-style: italic;
+  color: orange;
+}
+
+/* Form đăng nhập */
+.login-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* Các input xếp theo cột */
+  gap: 12px;
+  /* Khoảng cách giữa các input */
+  max-width: 400px;
+  margin: 20px auto;
+  /* Căn giữa và cách trên dưới 20px */
+}
+
+/* Dùng grid để căn giữa toàn bộ nội dung */
+.dot-container {
+  display: grid;
+  place-content: center;
+  /* Căn giữa cả theo trục ngang và dọc */
+  min-height: 100vh;
+  /* Chiều cao tối thiểu 100% màn hình */
+}
+
+/* Bộ đếm dạng nút với khoảng cách */
+.counter-container {
+  display: flex;
+  gap: 0.5rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* Kích thước lớn cho nút */
+.counter-container>button {
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Khối hiển thị từng người dùng */
+.user-container {
+  text-align: center;
+  padding: 16px 32px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* Bóng đổ */
+  transition: 0.2s all;
+  /* Hiệu ứng khi hover */
+  cursor: pointer;
+}
+
+/* Chi tiết người dùng dạng hàng ngang */
+.user-detail-container {
+  padding: 16px 32px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Danh sách người dùng hiển thị dạng grid */
+.user-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Tự động chia cột tối thiểu 250px */
+  gap: 32px;
+  justify-content: center;
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Phóng to nhẹ khi hover vào user card */
+.user-container:hover {
+  transform: scale(1.1);
 }
